@@ -1,0 +1,33 @@
+<html>
+<body>
+<script
+src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
+</script>
+<h1>Upload an Image to Logy.AI for diagnosis</h1>
+
+<form id="myform">
+  <label for="imgx">Select image:</label>
+  <input type="file" id="finput" multiple="false" accept="image/*" >
+<p>  <button type="submit">Submit</button> </p>	
+</form>
+<p>Canvas:</p>
+<canvas id="myCanvas" width="240" height="297"
+style="border:1px solid #d3d3d3;">
+</canvas>
+
+<script>
+const oform = document.getElementById('myform');
+oform.onsubmit=submit;
+function submit(event) {
+  event.preventDefault();
+  upload();
+}
+function upload() {
+  var imgcanvas=document.getElementById("myCanvas");
+  var fileinput= document.getElementById("finput");
+  var image = new SimpleImage(fileinput);
+  image.drawTo(imgcanvas);
+}
+</script>
+</body>
+</html>
